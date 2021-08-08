@@ -6,9 +6,6 @@ If you want to learn more about Quarkus, please visit its website: https://quark
 
 ## Running the application in dev mode
 
-docker run -d -p 27017:27017 -v /data/db:/data/db --name mymongo mongo:5.0.2
-
-
 You can run your application in dev mode that enables live coding using:
 ```shell script
 ./mvnw compile quarkus:dev
@@ -48,10 +45,12 @@ You can then execute your native executable with: `./target/employee-finder-0.0.
 
 If you want to learn more about building native executables, please consult https://quarkus.io/guides/maven-tooling.html.
 
-## Provided Code
+## MongoDB
 
-### RESTEasy JAX-RS
+### Local Docker image
 
-Easily start your RESTful Web Services
+```shell script
+docker pull mongo:5.0.2
 
-[Related guide section...](https://quarkus.io/guides/getting-started#the-jax-rs-resources)
+docker run -d -p 27017:27017 -v /data/db:/data/db --name mymongo mongo:5.0.2
+```
